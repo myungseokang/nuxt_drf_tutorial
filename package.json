@@ -1,0 +1,9 @@
+{
+  "name": "nuxt_tutorial",
+  "dependencies": {
+  	"nuxt": "latest"
+  },
+  "scripts": {
+    "start": "nuxt"
+  }
+}
