@@ -1,9 +1,11 @@
 {
-  "name": "nuxt_tutorial",
+  "name": "nuxt-head-elements",
   "dependencies": {
-  	"nuxt": "latest"
+    "nuxt": "latest"
   },
   "scripts": {
-    "start": "nuxt"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
   }
 }
