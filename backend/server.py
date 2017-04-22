@@ -28,12 +28,3 @@ def trendings():
         })
 
     return json.dumps(trending_list)
-
-'''
-[
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "url": ""
-  },
-'''
