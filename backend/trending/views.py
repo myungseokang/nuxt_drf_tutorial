@@ -1,24 +1,14 @@
-import json
-
 import requests
+import json
 from bs4 import BeautifulSoup
-from flask import Flask, request
+
+from django.http import HttpResponse
 
 
-app = Flask(__name__)
+def trending_list(request):
+    count = int(request.GET.get('count', 0))
+    language = request.GET.get('lang', '')
 
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
-
-@app.route('/trendings', methods=['GET'])
-def trendings():
-    count = int(request.args.get('count'))
-    language = request.args.get('lang')
-    print(count)
-    print(language)
     resposne = requests.get(f'https://github.com/trending/{language}')
     parsed_html = BeautifulSoup(resposne.content, 'html.parser')
     trending_list = []
@@ -31,5 +21,4 @@ def trendings():
             'name': url,
             'url': f'https://github.com{url}'
         })
-
-    return json.dumps(trending_list)
+    return HttpResponse(json.dumps(trending_list))

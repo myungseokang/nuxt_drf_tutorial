@@ -13,7 +13,7 @@ export default {
     return !isNaN(+params.id)
   },
   asyncData ({ params, error }) {
-    return axios.get(`http://localhost:5000/trendings/${params.id}`)
+    return axios.get(`http://localhost:8000/trendings/${params.id}`)
     .then((res) => res.data)
     .catch(() => {
       error({ message: 'Page not found', statusCode: 404 })

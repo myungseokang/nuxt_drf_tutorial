@@ -14,7 +14,7 @@ import axios from 'axios'
 
 export default {
   asyncData () {
-    return axios.get('http://localhost:5000/trendings?lang=python&count=5')
+    return axios.get('http://localhost:8000/trendings?lang=python&count=5')
     .then((res) => {
       return { trendings: res.data }
     })

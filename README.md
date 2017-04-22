@@ -1,8 +1,8 @@
-Nuxt & Flask Collaboration
+Nuxt & DRF Collaboration
 ===
 
 
-1. Flask
+1. DRF(Django REST Framework)
 
 ```bash
 $ cd backend
@@ -10,11 +10,9 @@ $ cd backend
 # Install dependencies
 $ pip install -r requirements.txt
 
-# Set environ
-$ export FLASK_APP=server.py
-
 # Run
-$ flask run --host=0.0.0.0
+$ python manage.py migrate
+$ python manage.py runserver 0.0.0.0:8000
 ```
 
 2. Nuxt
