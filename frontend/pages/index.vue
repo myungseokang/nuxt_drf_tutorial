@@ -3,7 +3,7 @@
     <h2>Github trendings</h2>
     <ul class="trendings">
       <li v-for="trending in trendings">
-        <nuxt-link :to="'/trendings/'+trending.id">{{ trending.name }}</nuxt-link>
+        <a :href="trending.url" target="_blank">{{ trending.name }}</a>
       </li>
     </ul>
   </div>
@@ -14,9 +14,8 @@ import axios from 'axios'
 
 export default {
   asyncData () {
-    return axios.get('http://localhost:5000/trendings')
+    return axios.get('http://localhost:5000/trendings?lang=python&count=5')
     .then((res) => {
-      console.log(res.data)
       return { trendings: res.data }
     })
   }
