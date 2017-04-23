@@ -4,6 +4,8 @@
     <ul class="trendings">
       <li v-for="trending in trendings">
         <a :href="trending.url" target="_blank">{{ trending.name }}</a>
+        <p>{{ trending.star_cnt }}</p>
+        <p>{{ trending.today_star }}</p>
       </li>
     </ul>
   </div>
@@ -14,7 +16,7 @@ import axios from 'axios'
 
 export default {
   asyncData () {
-    return axios.get('http://localhost:8000/trendings?lang=python&count=5')
+    return axios.get('http://localhost:8000/trendings?count=5')
     .then((res) => {
       return { trendings: res.data }
     })
